@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_ptr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afadlane <afadlane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 11:44:47 by afadlane          #+#    #+#             */
-/*   Updated: 2022/11/05 18:20:02 by afadlane         ###   ########.fr       */
+/*   Created: 2022/11/05 14:18:54 by afadlane          #+#    #+#             */
+/*   Updated: 2022/11/05 18:11:08 by afadlane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_ptr(unsigned long n)
 {
-	int	i;
+	unsigned long	a;
+	unsigned long	r;
+	int				i;
 
+	a = n;
 	i = 0;
-	if (s)
+	if (a == 0)
+	i++;
+	while (a != 0)
 	{
-		while (s[i])
-		{
-			write(1, &s[i], 1);
-			i++;
-		}
-		return (i);
+		a = a / 16;
+		i++;
 	}
-	return (ft_putstr("(null)"));
+	if (n > 15)
+		ft_ptr(n / 16);
+		r = n % 16;
+	if (r >= 10 && r < 16)
+		ft_putchar(r + 87);
+	else
+		ft_putchar(r + 48);
+	return (i);
 }

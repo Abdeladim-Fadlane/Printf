@@ -6,14 +6,14 @@
 /*   By: afadlane <afadlane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:40:06 by afadlane          #+#    #+#             */
-/*   Updated: 2022/11/04 18:31:02 by afadlane         ###   ########.fr       */
+/*   Updated: 2022/11/05 18:13:50 by afadlane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    write(1, &c ,1);
-    return(1);
+	write(1, &c, 1);
+	return (1);
 }
